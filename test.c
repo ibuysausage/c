@@ -11,6 +11,10 @@ int main(void) {
   fgets(buff, sizeof(buff), stdin);
   printf("Buff is %s\n", buff);
 
+  int c;
+  while ((c = getchar()) != '\n' && c != EOF)
+    ;
+
   printf("Enter in a string: ");
   fgets(other, sizeof(other), stdin);
   printf("other is: %s", other);
@@ -21,5 +25,5 @@ int main(void) {
   // created then ! will be appended
   printf("other is: %s!\n", other);
   // Also remember that if using atoi you don't need strcspn cus atoi stop
-  // parsing at first non digit
+  // parsing at first non digit, same as strtol
 }
