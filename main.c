@@ -1,18 +1,14 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
 int main(void) {
-  char height[50];
-  char *endptr;
-  printf("Enter your height in cm: ");
-  fgets(height, sizeof(height), stdin);
-  int heightint = strtol(height, &endptr, 10);
+  char name[50];
 
-  if (heightint >= 160) {
-    printf("Tall enough\n");
-  } else {
-    printf("not tall enough\n");
-  }
+  printf("Enter your full name: ");
+  fgets(name, sizeof(name), stdin);
+  name[strcspn(name, "\n")] = 0;
+
+  printf("Hi! %s\n", name);
 
   return 0;
 }
