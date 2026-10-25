@@ -1,8 +1,11 @@
 #include <stdio.h>
 
 int main(void) {
-  puts("Hello, World");
-  char hi[] = "hi";
-  printf("%s\n", hi);
+  for (int i = 0; i < 5; i++) {
+    int x = 10;
+    x++;
+    printf("%d\n", i + 1);
+    printf("%d\n", x);
+  }
   return 0;
 }
