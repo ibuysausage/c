@@ -1,4 +1,4 @@
-all: name swap vol main
+all: name swap vol main spam
 
 name: name.c
 	gcc -o name name.c -Wall -Wextra
