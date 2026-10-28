@@ -4,24 +4,24 @@
 
 int volume(int volL, int volW, int volH) {
 
-  int volume = volL * volW * volH;
-  printf("\nThe volume is: %d\n", volume);
+  unsigned long long int volume = volL * volW * volH;
+  printf("\nThe volume is: %llu\n", volume);
 
   return volL * volW;
 }
 
 int area(int areaL, int areaH) {
-  int area = areaL * areaH;
+  unsigned long long int area = areaL * areaH;
 
-  printf("\nThe Area is: %d\n", area);
+  printf("\nThe Area is: %llu\n", area);
   return areaL * areaH;
 }
 
 int main(void) {
 
-  int length = 0;
-  int width = 0;
-  int height = 0;
+  unsigned long int length = 0;
+  unsigned long int width = 0;
+  unsigned long int height = 0;
 
   char buf[50];
   char *endptr;
