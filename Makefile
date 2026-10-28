@@ -1,22 +1,13 @@
-all: main vol test num-spam name
+all: name swap vol main
 
 name:
-		clang name.c -o name -Wall
+		clang name.c -o name -Wall -Wextra
 
 swap:
-		clang -o swap swap.c -Wall
-
-num-spam:
-		clang num-spam.c -o num-spam -Wall
+		clang -o swap swap.c -Wall -Wextra
 
 vol: vol-area.c
-		clang vol-area.c -o vol-area -Wall
-
-test: test.c
-		clang test.c -o test -Wall
+		clang vol-area.c -o vol-area -Wall -Wextra
 
 main: main.c
-		clang main.c -o main -Wall
-
-run: all
-		./main
+		clang main.c -o main -Wall -Wextra
