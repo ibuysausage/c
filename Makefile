@@ -10,7 +10,7 @@ vol: vol-area.c
 	gcc -o vol-area vol-area.c -Wall -Wextra
 
 spam: num-spam.c
-	gcc -o spam spam.c -Wall -Wextra
+	gcc -o spam num-spam.c -Wall -Wextra
 
 main: main.c
 	gcc -o main main.c -Wall -Wextra
