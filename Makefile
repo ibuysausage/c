@@ -1,3 +1,5 @@
+CFLAGS = -std=c99
+
 all: name swap vol main spam
 
 name: name.c
