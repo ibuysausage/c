@@ -4,11 +4,15 @@
 
 int main(void) {
   srand(time(NULL));
-  int num = rand();
+  const int min = 1;
+  const int max = 100;
 
   _Bool correct;
 
-  printf("%d\n", num);
+  while (1) {
+    int num = rand() % (max - min + 1) + min;
+    printf("%d\n", num);
+  }
 
   if (correct == 1) {
     printf("You captured the flag!\n");
