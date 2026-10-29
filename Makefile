@@ -1,6 +1,6 @@
 CFLAGS = -std=c99
 
-all: name swap vol main spam
+all: name swap vol main spam guess
 
 name: name.c
 	gcc -o name name.c -Wall -Wextra
@@ -13,6 +13,9 @@ vol: vol-area.c
 
 spam: num-spam.c
 	gcc -o spam num-spam.c -Wall -Wextra
+
+guess: guess.c
+	gcc -o guess guess.c -Wall -Wextra
 
 main: main.c
 	gcc -o main main.c -Wall -Wextra
