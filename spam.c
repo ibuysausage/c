@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 
 int main(void) {
 
@@ -6,6 +7,7 @@ int main(void) {
 
   while (1) {
     printf("%llu         ", num + 1);
+    sleep(2);
   }
   return 0;
 }
