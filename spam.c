@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 #include <unistd.h>
 
 int main(void) {
@@ -7,7 +8,8 @@ int main(void) {
 
   while (1) {
     printf("%llu         ", num + 1);
-    sleep(2);
+    fflush(stdout);
+    sleep(1);
   }
   return 0;
 }
