@@ -37,13 +37,13 @@ int main(void) {
   fgets(buf, sizeof(buf), stdin);
   height = strtol(buf, &endptr, 10);
 
-  char str[50];
+  char aov[50];
   printf("Area Or Volume?: ");
-  fgets(str, sizeof(str), stdin);
+  fgets(aov, sizeof(aov), stdin);
   // Needed for strcmp because of the \n
-  str[strcspn(str, "\n")] = 0;
+  aov[strcspn(aov, "\n")] = 0;
 
-  if (strcmp("Area", str) == 0) {
+  if (strcmp("Area", aov) == 0) {
     area(length, height);
   } else {
     volume(length, width, height);
