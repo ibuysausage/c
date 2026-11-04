@@ -1,9 +1,10 @@
 #include <stdio.h>
 
-int main(void) {
-  int d = 2;
-  printf("Welcome to bug\n");
-  scanf("%d", d);
-  printf("you did %d\n", d);
+int main(int argc, char *argv[]) {
+  if (argc > 1) {
+    printf("Hello %s\n", argv[1]);
+  } else {
+    printf("Hello world!\n");
+  }
   return 0;
 }
