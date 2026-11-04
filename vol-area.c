@@ -17,7 +17,7 @@ int area(int areaL, int areaH) {
   return areaL * areaH;
 }
 
-int main(void) {
+int main(int argc, char *argv[]) {
 
   unsigned long int length = 0;
   unsigned long int width = 0;
@@ -25,29 +25,51 @@ int main(void) {
 
   char buf[50];
   char *endptr;
-  printf("Length: ");
-  fgets(buf, sizeof(buf), stdin);
-  length = strtol(buf, &endptr, 10);
 
-  printf("Width: ");
-  fgets(buf, sizeof(buf), stdin);
-  width = strtol(buf, &endptr, 10);
+  if (argc == 4 && strcmp(argv[1], "-area") == 0) {
 
-  printf("Height: ");
-  fgets(buf, sizeof(buf), stdin);
-  height = strtol(buf, &endptr, 10);
+    length = strtol(argv[2], &endptr, 10);
+    width = strtol(argv[3], &endptr, 10);
+    area(length, width);
+  } else if (argc == 5 && strcmp(argv[1], "-vol") == 0) {
 
-  char aov[50];
-  printf("Area Or Volume?: ");
-  fgets(aov, sizeof(aov), stdin);
-  // Needed for strcmp because of the \n
-  aov[strcspn(aov, "\n")] = 0;
-
-  if (strcmp("Area", aov) == 0) {
-    area(length, height);
-  } else {
+    length = strtol(argv[2], &endptr, 10);
+    width = strtol(argv[3], &endptr, 10);
+    height = strtol(argv[4], &endptr, 10);
     volume(length, width, height);
-  }
+  } else {
 
+    char aov[50];
+    printf("Area Or Volume?: ");
+    fgets(aov, sizeof(aov), stdin);
+    // Needed for strcmp because of the \n
+    // aov[strcspn(aov, "\n")] = 0;
+
+    if (strcmp(aov, "Area\n") == 0 || strcmp(aov, "area\n") == 0) {
+      printf("Length: ");
+      fgets(buf, sizeof(buf), stdin);
+      length = strtol(buf, &endptr, 10);
+
+      printf("Width: ");
+      fgets(buf, sizeof(buf), stdin);
+      width = strtol(buf, &endptr, 10);
+
+      area(length, width);
+    } else if (strcmp(aov, "Volume\n") == 0 || strcmp(aov, "volume\n") == 0) {
+      printf("Length: ");
+      fgets(buf, sizeof(buf), stdin);
+      length = strtol(buf, &endptr, 10);
+
+      printf("Width: ");
+      fgets(buf, sizeof(buf), stdin);
+      width = strtol(buf, &endptr, 10);
+
+      printf("Height: ");
+      fgets(buf, sizeof(buf), stdin);
+      height = strtol(buf, &endptr, 10);
+
+      volume(length, width, height);
+    }
+  }
   return 0;
 }
