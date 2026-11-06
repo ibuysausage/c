@@ -40,12 +40,12 @@ int main(int argc, char *argv[]) {
   } else {
 
     char aov[50];
-    printf("Area Or Volume?: ");
+    printf("Area Or Volume?(a or v): ");
     fgets(aov, sizeof(aov), stdin);
     // Needed for strcmp because of the \n
     // aov[strcspn(aov, "\n")] = 0;
 
-    if (strcmp(aov, "Area\n") == 0 || strcmp(aov, "area\n") == 0) {
+    if (strcmp(aov, "a\n") == 0 || strcmp(aov, "area\n") == 0) {
       printf("Length: ");
       fgets(buf, sizeof(buf), stdin);
       length = strtol(buf, &endptr, 10);
@@ -55,7 +55,7 @@ int main(int argc, char *argv[]) {
       width = strtol(buf, &endptr, 10);
 
       area(length, width);
-    } else if (strcmp(aov, "Volume\n") == 0 || strcmp(aov, "volume\n") == 0) {
+    } else if (strcmp(aov, "v\n") == 0 || strcmp(aov, "volume\n") == 0) {
       printf("Length: ");
       fgets(buf, sizeof(buf), stdin);
       length = strtol(buf, &endptr, 10);
