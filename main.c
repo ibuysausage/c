@@ -8,6 +8,5 @@ int main(void) {
   printf("%d\n", *ptr);
   *ptr = 7;
   printf("%d\n", *ptr);
-  *ptr = 7;
   return 0;
 }
