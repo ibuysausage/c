@@ -1,10 +1,13 @@
 #include <stdio.h>
 
-int main(int argc, char *argv[]) {
-  if (argc > 1) {
-    printf("Hello %s\n", argv[1]);
-  } else {
-    printf("Hello world!\n");
-  }
+int main(void) {
+  int k = 5;
+  int *ptr;
+  ptr = &k;
+  printf("%p\n", ptr);
+  printf("%d\n", *ptr);
+  *ptr = 7;
+  printf("%d\n", *ptr);
+  *ptr = 7;
   return 0;
 }
