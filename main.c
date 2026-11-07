@@ -1,12 +1,19 @@
 #include <stdio.h>
+#include <string.h>
 
 int main(void) {
-  int k = 5;
-  int *ptr;
-  ptr = &k;
-  printf("%p\n", ptr);
-  printf("%d\n", *ptr);
-  *ptr = 7;
-  printf("%d\n", *ptr);
+  struct sigrecord {
+    int signum;
+    char signame[20];
+    char sigdesc[100];
+  } sigline, *sigline_p;
+
+  sigline.signum = 5;
+  strcpy(sigline.signame, "SIGINT");
+  strcpy(sigline.sigdesc, "Interup from keyboard");
+  if (sigline.signum == 5) {
+    printf("fah\n");
+  }
+  sigline_p = &sigline;
   return 0;
-}
+};
