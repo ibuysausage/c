@@ -1,19 +1,14 @@
 #include <stdio.h>
-#include <string.h>
 
 int main(void) {
-  struct sigrecord {
-    int signum;
-    char signame[20];
-    char sigdesc[100];
-  } sigline, *sigline_p;
-
-  sigline.signum = 5;
-  strcpy(sigline.signame, "SIGINT");
-  strcpy(sigline.sigdesc, "Interup from keyboard");
-  if (sigline.signum == 5) {
-    printf("fah\n");
+  int a = 5;
+  printf("%d\n", a);
+  printf("%d\n", a++);
+  a = 5;
+  printf("%d\n", ++a);
+  fflush(stdout);
+  for (unsigned int i = 0; i < 5; ++i) {
+    printf("%d\n");
   }
-  sigline_p = &sigline;
   return 0;
-};
+}
