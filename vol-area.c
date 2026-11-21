@@ -7,7 +7,7 @@ int volume(int volL, int volW, int volH) {
   unsigned long long int volume = volL * volW * volH;
   printf("\nThe volume is: %llu\n", volume);
 
-  return volL * volW;
+  return volL * volW * volH;
 }
 
 int area(int areaL, int areaH) {
