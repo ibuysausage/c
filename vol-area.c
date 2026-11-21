@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-int volume(int volL, int volW, int volH) {
+int volume(unsigned long long int volL, unsigned long long int volW,
+           unsigned long long int volH) {
 
   unsigned long long int volume = volL * volW * volH;
   printf("\nThe volume is: %llu\n", volume);
@@ -10,7 +11,7 @@ int volume(int volL, int volW, int volH) {
   return volL * volW * volH;
 }
 
-int area(int areaL, int areaH) {
+int area(unsigned long long int areaL, unsigned long long int areaH) {
   unsigned long long int area = areaL * areaH;
 
   printf("\nThe Area is: %llu\n", area);
