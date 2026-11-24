@@ -28,12 +28,10 @@ int main(int argc, char *argv[]) {
   char *endptr;
 
   if (argc == 4 && strcmp(argv[1], "-area") == 0) {
-
     length = strtol(argv[2], &endptr, 10);
     width = strtol(argv[3], &endptr, 10);
     area(length, width);
   } else if (argc == 5 && strcmp(argv[1], "-vol") == 0) {
-
     length = strtol(argv[2], &endptr, 10);
     width = strtol(argv[3], &endptr, 10);
     height = strtol(argv[4], &endptr, 10);
