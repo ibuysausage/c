@@ -1,7 +1,10 @@
 #include <stdio.h>
 
 int main(void) {
-  int a = 1000000;
-  printf("%zu\n", sizeof(2 + 1));
+  int a = 1;
+  printf("%d\n", a);
+  a += 10;
+  printf("%d\n", a);
+
   return 0;
 }
