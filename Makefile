@@ -1,6 +1,6 @@
 CFLAGS = -Wall -Wextra -g
 CC = -std=c99
-FILES = main name vol-area main spam guess avg
+FILES = main name vol-area main guess avg
 
 all: $(FILES)
 
@@ -15,9 +15,6 @@ avg: avg.c
 
 vol-area: vol-area.c
 	gcc -o vol-area vol-area.c $(CC) $(CFLAGS)
-
-spam: spam.c
-	gcc -o spam spam.c $(CC) $(CFLAGS)
 
 guess: guess.c
 	gcc -o guess guess.c $(CC) $(CFLAGS)
