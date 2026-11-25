@@ -3,7 +3,6 @@
 
 int main(void) {
   char name[50];
-  char *endptr;
 
   printf("Enter your full name: ");
   fgets(name, sizeof(name), stdin);
