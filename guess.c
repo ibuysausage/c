@@ -18,7 +18,7 @@ int main(void) {
     char *endptr;
 
     if (guess == 0)
-      printf("Guess the number(1-100): ");
+      printf("Guess the number(%d-%d): ", min, max);
     else if (guess > num)
       printf("Too High: ");
     else
