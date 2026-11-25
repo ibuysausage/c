@@ -14,21 +14,24 @@ int main(void) {
   while (correct == 0) {
     static unsigned short int guess = 0;
 
-    char buf[5];
+    char buf[5] = "0";
     char *endptr;
 
-    if (guess == 0) {
-      printf("Guess the number: ");
-    } else if (guess > num) {
+    if (guess == 0)
+      printf("Guess the number(1-100): ");
+    else if (guess > num)
       printf("Too High: ");
-    } else {
+    else
       printf("Too Low: ");
-    }
-
-    attemps++;
 
     fgets(buf, sizeof(buf), stdin);
     guess = strtol(buf, &endptr, 10);
+
+    // Not null terminator because of \n because it is stdin
+    if (*endptr != '\n')
+      puts("\nPlease use numbers!!");
+    else
+      attemps++;
 
     if (guess == num) {
       puts("\nYou win!!");
