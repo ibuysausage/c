@@ -1,10 +1,7 @@
 CC = gcc
 CFLAGS = -std=c99 -Wall -Wextra -g
-RAYFLAGS = -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
-GTKFLAGS = $(shell pkg-config --cflags --libs gtk4)
 
-
-FILES = main avg guess gui ls name vol-area
+FILES = main avg guess ls name vol-area
 
 all: $(FILES)
 
@@ -12,16 +9,13 @@ clean:
 	rm -rf $(FILES)
 
 main: main.c
-	$(CC) -o main main.c $(CFLAGS) $(GTKFLAGS)
+	$(CC) -o main main.c $(CFLAGS)
 
 avg: avg.c
 	$(CC) -o avg avg.c $(CFLAGS)
 
 guess: guess.c
 	$(CC) -o guess guess.c $(CFLAGS)
-
-gui: gui.c
-	$(CC) -o gui gui.c $(CFLAGS) $(RAYFLAGS)
 
 ls: ls.c
 	$(CC) -o ls ls.c $(CFLAGS)
