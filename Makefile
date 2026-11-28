@@ -21,4 +21,4 @@ guess: guess.c
 	gcc -o guess guess.c $(CC) $(CFLAGS)
 
 main: main.c
-	gcc -o main main.c $(CC) $(CFLAGS) ${RAYFLAGS}
+	gcc -o main main.c $(CC) $(CFLAGS) $(RAYFLAGS)
