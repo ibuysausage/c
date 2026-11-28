@@ -1,10 +1,17 @@
+#include <raylib.h>
 #include <stdio.h>
 
 int main(void) {
-  int a = 1;
-  printf("%d\n", a);
-  a += 10;
-  printf("%d\n", a);
+
+  InitWindow(800, 400, "basic");
+
+  while (!WindowShouldClose()) {
+    BeginDrawing();
+    ClearBackground(RAYWHITE);
+    EndDrawing();
+  }
+
+  CloseWindow();
 
   return 0;
 }

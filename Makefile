@@ -1,6 +1,7 @@
 CFLAGS = -Wall -Wextra -g
 CC = -std=c99
 FILES = main name vol-area main guess avg
+RAYFLAGS = -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
 
 all: $(FILES)
 
@@ -20,4 +21,4 @@ guess: guess.c
 	gcc -o guess guess.c $(CC) $(CFLAGS)
 
 main: main.c
-	gcc -o main main.c $(CC) $(CFLAGS)
+	gcc -o main main.c $(CC) $(CFLAGS) ${RAYFLAGS}
