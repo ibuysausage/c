@@ -18,20 +18,26 @@
       };
     in
       pkgs.mkShell {
-        packages = [
+        packages = with pkgs; [
           pkgs.libGL
 
           # X11 dependencies
-          pkgs.libx11
-          pkgs.libx11.dev
-          pkgs.libxcursor
-          pkgs.libxi
-          pkgs.libxinerama
-          pkgs.libxrandr
-          pkgs.raylib
+          libx11
+          libx11.dev
+          libxcursor
+          libxi
+          libxinerama
+          libxrandr
+          raylib
+          gtk4
+          glib
+          gsettings-desktop-schemas
+          adwaita-icon-theme
 
-          # Uncomment the line below if you want to build Raylib with web support
-          # pkgs.emscripten
+          pkg-config
+          bear
+          clang-tools
+          wrapGAppsHook4
         ];
 
         # Audio dependencies
@@ -39,6 +45,7 @@
 
         shellHook = ''
           exec zsh
+          export XDG_DATA_DIRS="$GSETTINGS_SCHEMAS_PATH:$XDG_DATA_DIRS"
         '';
       };
   };
